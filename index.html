@@ -5,177 +5,289 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diya Education & Immigration Services</title>
     <style>
+        :root {
+            --primary: #0a192f;
+            --secondary: #172a45;
+            --accent: #ffd700;
+            --accent-glow: #ffae00;
+            --text-light: #f8f9fa;
+            --text-dark: #333333;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
         }
+
         body {
-            color: #333;
+            background-color: #f4f7f6;
+            color: var(--text-dark);
             line-height: 1.6;
         }
-        /* Header & Navigation */
+
+        /* Top Bar for Direct Contact */
+        .top-bar {
+            background: #050d1a;
+            color: #ccd6f6;
+            padding: 8px 8%;
+            font-size: 0.88rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .top-bar a {
+            color: var(--accent);
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: 500;
+        }
+
+        /* Header Navigation */
         header {
-            background-color: #003366;
-            color: #fff;
-            padding: 1rem 5%;
+            background: var(--primary);
+            padding: 1.2rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid var(--accent);
         }
-        header .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ff9900;
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
+
         nav a {
-            color: #fff;
+            color: var(--text-light);
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
+            margin-left: 25px;
+            font-weight: 600;
+            transition: 0.3s;
         }
+
         nav a:hover {
-            color: #ff9900;
+            color: var(--accent);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200') no-repeat center center/cover;
-            height: 70vh;
-            color: white;
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.92), rgba(23, 42, 69, 0.88)), 
+                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200') no-repeat center center/cover;
+            min-height: 75vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-        }
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 25px;
-        }
-        .btn {
-            background-color: #ff9900;
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .btn:hover {
-            background-color: #e68a00;
+            color: var(--text-light);
         }
 
-        /* Services Section */
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #ccd6f6;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--accent), var(--accent-glow));
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Services Grid */
         .services {
-            padding: 60px 5%;
-            background-color: #f4f7f6;
+            padding: 80px 8%;
             text-align: center;
+            background-color: #ffffff;
         }
-        .services h2 {
-            margin-bottom: 40px;
-            color: #003366;
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
         }
+
+        .section-title::after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            display: block;
+            margin: 10px auto 40px;
+            border-radius: 2px;
+        }
+
         .service-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 30px;
         }
+
         .service-card {
-            background: #fff;
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: 0.3s;
+            background: var(--text-light);
+            padding: 35px 25px;
+            border-radius: 15px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
+
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 35px rgba(10, 25, 47, 0.15);
         }
-        .service-card h3 {
-            color: #003366;
+
+        .service-card .icon {
+            font-size: 2.8rem;
             margin-bottom: 15px;
         }
 
-        /* Countries Section */
-        .countries {
-            padding: 60px 5%;
-            text-align: center;
-        }
-        .country-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .country-card {
-            background: #003366;
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            font-weight: bold;
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
         }
 
         /* Contact Section */
-        .contact {
-            padding: 60px 5%;
-            background-color: #eef2f5;
-            text-align: center;
-        }
-        .contact form {
-            max-width: 500px;
-            margin: 30px auto 0;
+        .contact-container {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 80px 8%;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .contact input, .contact select, .contact textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .contact button {
-            background-color: #003366;
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-        }
-        .contact button:hover {
-            background-color: #002244;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        /* Footer */
-        footer {
-            background-color: #111;
-            color: #aaa;
-            text-align: center;
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .phone-box {
+            margin-top: 25px;
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px;
-            font-size: 0.9rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .phone-item {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .phone-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .phone-item a:hover {
+            color: var(--accent);
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        footer {
+            background: #050d1a;
+            color: #8892b0;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div>
+            ✉️ Email: <a href="mailto:diyaeducation@gmail.com">diyaeducation@gmail.com</a>
+        </div>
+        <div>
+            🇮🇳 <a href="tel:+919375777772">+91 9375777772</a> | 
+            🇬🇧 <a href="tel:+447424292710">+44 7424292710</a> | 
+            🇵🇹 <a href="tel:+351920131967">+351 920131967</a>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
     <header>
         <div class="logo">Diya Education</div>
         <nav>
             <a href="#home">Home</a>
             <a href="#services">Services</a>
-            <a href="#countries">Destinations</a>
             <a href="#contact">Contact Us</a>
         </nav>
     </header>
@@ -183,62 +295,80 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>તમારા વિદેશ જવાના સપનાને આપો સાચી દિશા</h1>
-        <p>સ્ટુડન્ટ વીઝા, પી.આર (PR), અને વર્ક પરમિટ માટે વિશ્વસનીય અને શ્રેષ્ઠ ઇમિગ્રેશન કન્સલ્ટન્સી.</p>
-        <a href="#contact" class="btn">ફ્રી ફ્રી કન્સલ્ટેશન બુક કરો</a>
+        <p>સ્ટુડન્ટ વીઝા, PR, અને વર્ક પરમિટ માટે વિશ્વસનીય અને શ્રેષ્ઠ ગ્લોબલ ઇમિગ્રેશન કન્સલ્ટન્સી.</p>
+        <a href="#contact" class="btn-gold">ફ્રી કન્સલ્ટેશન બુક કરો</a>
     </section>
 
     <!-- Services Section -->
     <section class="services" id="services">
-        <h2>અમારી ઇમિગ્રેશન સેવાઓ</h2>
+        <h2 class="section-title">અમારી પ્રીમિયમ સેવાઓ</h2>
         <div class="service-grid">
             <div class="service-card">
-                <h3>🎓 Student Visa</h3>
-                <p>Top Universities માં એડમિશન મેળવો અને સ્કોલરશીપ માટે માર્ગદર્શન મેળવો.</p>
+                <div class="icon">🎓</div>
+                <h3>Student Visa</h3>
+                <p>Top Global Universities માં એડમિશન અને સ્કૉલરશીપ પ્રોસેસ.</p>
             </div>
             <div class="service-card">
-                <h3>💼 Permanent Residency (PR)</h3>
-                <p>કેનેડા, ઓસ્ટ્રેલિયા અને અન્ય દેશો માટે PR એપ્લિકેશનની સંપૂર્ણ પ્રોસેસ.</p>
+                <div class="icon">💼</div>
+                <h3>Permanent Residency (PR)</h3>
+                <p>કેનેડા, ઓસ્ટ્રેલિયા અને યુરોપના દેશો માટે PR પ્રોસેસ.</p>
             </div>
             <div class="service-card">
-                <h3>🛫 Work Permit</h3>
-                <p>વિદેશમાં લીગલ જોબ અને વર્ક વીઝા માટે કન્સલ્ટિંગ સર્વિસ.</p>
+                <div class="icon">🛫</div>
+                <h3>Work Permit</h3>
+                <p>લીગલ વર્ક પરમિટ અને જોબ સ્પોન્સરશીપ વિઝા માર્ગદર્શન.</p>
             </div>
             <div class="service-card">
-                <h3>📝 IELTS & Coaching</h3>
-                <p>IELTS, PTE અને સ્પોકન ઈંગ્લિશ માટે એક્સપર્ટ ટ્રેનિંગ.</p>
+                <div class="icon">📝</div>
+                <h3>IELTS & PTE Coaching</h3>
+                <p>હાઇ સ્કોર મેળવવા માટે પર્સનલાઇઝ્ડ ટ્રેનિંગ અને ગાઇડન્સ.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Countries Section -->
-    <section class="countries" id="countries">
-        <h2 style="color: #003366;">મુખ્ય દેશો (Top Destinations)</h2>
-        <div class="country-grid">
-            <div class="country-card">🇨🇦 Canada</div>
-            <div class="country-card">🇺🇸 USA</div>
-            <div class="country-card">🇬🇧 UK</div>
-            <div class="country-card">🇦🇺 Australia</div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2 style="color: #003366;">અમારો સંપર્ક કરો</h2>
-        <p>તમારી ઈન્ક્વાયરી સબમિટ કરો, અમારી ટીમ તમારો સંપર્ક કરશે.</p>
-        <form action="#" method="POST">
-            <input type="text" placeholder="તમારું નામ" required>
-            <input type="tel" placeholder="મોબાઈલ નંબર" required>
-            <input type="email" placeholder="ઈમેઈલ એડ્રેસ" required>
-            <select required>
-                <option value="">વીઝાનો પ્રકાર પસંદ કરો</option>
-                <option value="student">Student Visa</option>
-                <option value="visitor">Visitor / Tourist Visa</option>
-                <option value="work">Work Visa</option>
-                <option value="pr">Permanent Residency (PR)</option>
-            </select>
-            <textarea rows="4" placeholder="તમારો સંદેશ..."></textarea>
-            <button type="submit">એન્ક્વાયરી મોકલો</button>
-        </form>
+    <section class="contact-container" id="contact">
+        <div class="contact-info">
+            <h2>અમારો સંપર્ક કરો</h2>
+            <p style="font-size: 1.1rem; color: #8892b0;">
+                અમે તમને યોગ્ય દેશ અને કોર્સ પસંદ કરવામાં સંપૂર્ણ માર્ગદર્શન આપીશું.
+            </p>
+
+            <div class="phone-box">
+                <p style="color: var(--accent); font-weight: bold; margin-bottom: 10px;">📞 હેલ્પલાઇન નંબર્સ:</p>
+                <div class="phone-item">🇮🇳 India: <a href="tel:+919375777772">+91 9375777772</a></div>
+                <div class="phone-item">🇬🇧 UK: <a href="tel:+447424292710">+44 7424292710</a></div>
+                <div class="phone-item">🇵🇹 Portugal: <a href="tel:+351920131967">+351 920131967</a></div>
+                <div class="phone-item" style="margin-top: 15px;">✉️ Email: <a href="mailto:diyaeducation@gmail.com">diyaeducation@gmail.com</a></div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" placeholder="તમારું પૂરું નામ" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="મોબાઇલ નંબર" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="ઈમેઈલ એડ્રેસ" required>
+                </div>
+                <div class="form-group">
+                    <select required style="color: #aaa;">
+                        <option value="" disabled selected>વીઝાનો પ્રકાર પસંદ કરો</option>
+                        <option value="student">Student Visa</option>
+                        <option value="pr">PR / Permanent Residency</option>
+                        <option value="work">Work Visa</option>
+                        <option value="visitor">Visitor Visa</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea rows="3" placeholder="તમારો સંદેશ..."></textarea>
+                </div>
+                <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">એન્ક્વાયરી સબમિટ કરો</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
