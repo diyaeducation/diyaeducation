@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diya Education & Immigration Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header & Navigation */
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff9900;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ff9900;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200') no-repeat center center/cover;
+            height: 70vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            background-color: #ff9900;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #e68a00;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 60px 5%;
+            background-color: #f4f7f6;
+            text-align: center;
+        }
+        .services h2 {
+            margin-bottom: 40px;
+            color: #003366;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .service-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-card h3 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        /* Countries Section */
+        .countries {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .country-card {
+            background: #003366;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 60px 5%;
+            background-color: #eef2f5;
+            text-align: center;
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .contact input, .contact select, .contact textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact button {
+            background-color: #003366;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        .contact button:hover {
+            background-color: #002244;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Diya Education</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#countries">Destinations</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>તમારા વિદેશ જવાના સપનાને આપો સાચી દિશા</h1>
+        <p>સ્ટુડન્ટ વીઝા, પી.આર (PR), અને વર્ક પરમિટ માટે વિશ્વસનીય અને શ્રેષ્ઠ ઇમિગ્રેશન કન્સલ્ટન્સી.</p>
+        <a href="#contact" class="btn">ફ્રી ફ્રી કન્સલ્ટેશન બુક કરો</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2>અમારી ઇમિગ્રેશન સેવાઓ</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🎓 Student Visa</h3>
+                <p>Top Universities માં એડમિશન મેળવો અને સ્કોલરશીપ માટે માર્ગદર્શન મેળવો.</p>
+            </div>
+            <div class="service-card">
+                <h3>💼 Permanent Residency (PR)</h3>
+                <p>કેનેડા, ઓસ્ટ્રેલિયા અને અન્ય દેશો માટે PR એપ્લિકેશનની સંપૂર્ણ પ્રોસેસ.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛫 Work Permit</h3>
+                <p>વિદેશમાં લીગલ જોબ અને વર્ક વીઝા માટે કન્સલ્ટિંગ સર્વિસ.</p>
+            </div>
+            <div class="service-card">
+                <h3>📝 IELTS & Coaching</h3>
+                <p>IELTS, PTE અને સ્પોકન ઈંગ્લિશ માટે એક્સપર્ટ ટ્રેનિંગ.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section class="countries" id="countries">
+        <h2 style="color: #003366;">મુખ્ય દેશો (Top Destinations)</h2>
+        <div class="country-grid">
+            <div class="country-card">🇨🇦 Canada</div>
+            <div class="country-card">🇺🇸 USA</div>
+            <div class="country-card">🇬🇧 UK</div>
+            <div class="country-card">🇦🇺 Australia</div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 style="color: #003366;">અમારો સંપર્ક કરો</h2>
+        <p>તમારી ઈન્ક્વાયરી સબમિટ કરો, અમારી ટીમ તમારો સંપર્ક કરશે.</p>
+        <form action="#" method="POST">
+            <input type="text" placeholder="તમારું નામ" required>
+            <input type="tel" placeholder="મોબાઈલ નંબર" required>
+            <input type="email" placeholder="ઈમેઈલ એડ્રેસ" required>
+            <select required>
+                <option value="">વીઝાનો પ્રકાર પસંદ કરો</option>
+                <option value="student">Student Visa</option>
+                <option value="visitor">Visitor / Tourist Visa</option>
+                <option value="work">Work Visa</option>
+                <option value="pr">Permanent Residency (PR)</option>
+            </select>
+            <textarea rows="4" placeholder="તમારો સંદેશ..."></textarea>
+            <button type="submit">એન્ક્વાયરી મોકલો</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Diya Education. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
