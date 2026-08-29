@@ -3,377 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diya Education & Immigration Services</title>
-    <style>
-        :root {
-            --primary: #0a192f;
-            --secondary: #172a45;
-            --accent: #ffd700;
-            --accent-glow: #ffae00;
-            --text-light: #f8f9fa;
-            --text-dark: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-        }
-
-        body {
-            background-color: #f4f7f6;
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Top Bar for Direct Contact */
-        .top-bar {
-            background: #050d1a;
-            color: #ccd6f6;
-            padding: 8px 8%;
-            font-size: 0.88rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        .top-bar a {
-            color: var(--accent);
-            text-decoration: none;
-            margin-right: 15px;
-            font-weight: 500;
-        }
-
-        /* Header Navigation */
-        header {
-            background: var(--primary);
-            padding: 1.2rem 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            border-bottom: 2px solid var(--accent);
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffd700, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.92), rgba(23, 42, 69, 0.88)), 
-                        url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200') no-repeat center center/cover;
-            min-height: 75vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--text-light);
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin-bottom: 30px;
-            color: #ccd6f6;
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, var(--accent), var(--accent-glow));
-            color: var(--primary);
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
-        }
-
-        /* Services Grid */
-        .services {
-            padding: 80px 8%;
-            text-align: center;
-            background-color: #ffffff;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 70px;
-            height: 4px;
-            background: var(--accent);
-            display: block;
-            margin: 10px auto 40px;
-            border-radius: 2px;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--text-light);
-            padding: 35px 25px;
-            border-radius: 15px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 35px rgba(10, 25, 47, 0.15);
-        }
-
-        .service-card .icon {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-        }
-
-        /* Contact Section */
-        .contact-container {
-            background: var(--primary);
-            color: var(--text-light);
-            padding: 80px 8%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h2 {
-            font-size: 2.3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .phone-box {
-            margin-top: 25px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .phone-item {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .phone-item a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .phone-item a:hover {
-            color: var(--accent);
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-            background: var(--secondary);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        footer {
-            background: #050d1a;
-            color: #8892b0;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-    </style>
+    <title>DEC Immigration Advisor | Student Visa & Immigration Consultancy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-800">
 
-    <!-- Top Contact Bar -->
-    <div class="top-bar">
-        <div>
-            ✉️ Email: <a href="mailto:diyaeducation@gmail.com">diyaeducation@gmail.com</a>
+    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold tracking-wide">DEC <span class="text-amber-400">IMMIGRATION</span></h1>
+            <a href="https://wa.me/919375777772" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition">
+                <i class="fab font-bold fa-whatsapp mr-1"></i> WhatsApp
+            </a>
         </div>
-        <div>
-            🇮🇳 <a href="tel:+919375777772">+91 9375777772</a> | 
-            🇬🇧 <a href="tel:+447424292710">+44 7424292710</a> | 
-            🇵🇹 <a href="tel:+351920131967">+351 920131967</a>
-        </div>
-    </div>
-
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">Diya Education</div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact Us</a>
-        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <h1>તમારા વિદેશ જવાના સપનાને આપો સાચી દિશા</h1>
-        <p>સ્ટુડન્ટ વીઝા, PR, અને વર્ક પરમિટ માટે વિશ્વસનીય અને શ્રેષ્ઠ ગ્લોબલ ઇમિગ્રેશન કન્સલ્ટન્સી.</p>
-        <a href="#contact" class="btn-gold">ફ્રી કન્સલ્ટેશન બુક કરો</a>
+    <section class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">તમારા વિદેશ જવાના સપનાને સાકાર કરો</h2>
+            <p class="text-lg md:text-xl text-blue-100 mb-8">સ્ટડી વિઝા, વર્ક પરમિટ અને પીઆર માર્ગદર્શન માટે સૌથી વિશ્વાસપાત્ર સલાહકાર.</p>
+            <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-xl shadow-lg transition">સંપર્ક કરો</a>
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <h2 class="section-title">અમારી પ્રીમિયમ સેવાઓ</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <div class="icon">🎓</div>
-                <h3>Student Visa</h3>
-                <p>Top Global Universities માં એડમિશન અને સ્કૉલરશીપ પ્રોસેસ.</p>
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-blue-900">અમારી સેવાઓ</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <i class="fas fa-user-graduate text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Student Visa</h4>
+                <p class="text-gray-600 text-sm">UK, Canada, USA, Europe અને Australia માટે યુનિવર્સિટી એડમિશન અને વિઝા પ્રોસેસિંગ.</p>
             </div>
-            <div class="service-card">
-                <div class="icon">💼</div>
-                <h3>Permanent Residency (PR)</h3>
-                <p>કેનેડા, ઓસ્ટ્રેલિયા અને યુરોપના દેશો માટે PR પ્રોસેસ.</p>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <i class="fas fa-passport text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">PR & Immigration</h4>
+                <p class="text-gray-600 text-sm">વિદેશમાં સ્થાયી થવા માટે પર્મેનન્ટ રેસિડન્સી (PR) અને લીગલ પેપરવર્ક ગાઇડન્સ.</p>
             </div>
-            <div class="service-card">
-                <div class="icon">🛫</div>
-                <h3>Work Permit</h3>
-                <p>લીગલ વર્ક પરમિટ અને જોબ સ્પોન્સરશીપ વિઝા માર્ગદર્શન.</p>
-            </div>
-            <div class="service-card">
-                <div class="icon">📝</div>
-                <h3>IELTS & PTE Coaching</h3>
-                <p>હાઇ સ્કોર મેળવવા માટે પર્સનલાઇઝ્ડ ટ્રેનિંગ અને ગાઇડન્સ.</p>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <i class="fas fa-briefcase text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2">Visitor & Work Permit</h4>
+                <p class="text-gray-600 text-sm">ટૂરિસ્ટ વિઝા, બિઝનેસ વિઝા અને વર્ક પરમિટ માટેની ઝડપી ફાઇલિંગ સેવા.</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-container" id="contact">
-        <div class="contact-info">
-            <h2>અમારો સંપર્ક કરો</h2>
-            <p style="font-size: 1.1rem; color: #8892b0;">
-                અમે તમને યોગ્ય દેશ અને કોર્સ પસંદ કરવામાં સંપૂર્ણ માર્ગદર્શન આપીશું.
+    <section class="bg-gray-100 py-16 px-4">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-4">શા માટે DEC IMMIGRATION?</h3>
+            <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                કરણ ગિરિશભાઈ મિસ્ત્રી (Founder & CEO) ના નેતૃત્વ હેઠળ <strong>DEC IMMIGRATION ADVISOR</strong> (Diya Education and Consultant) વિદ્યાર્થીઓ અને પ્રોફેસનલ્સને વિદેશ જવા માટે સાચું અને પારદર્શક માર્ગદર્શન પૂરું પાડે છે.
             </p>
-
-            <div class="phone-box">
-                <p style="color: var(--accent); font-weight: bold; margin-bottom: 10px;">📞 હેલ્પલાઇન નંબર્સ:</p>
-                <div class="phone-item">🇮🇳 India: <a href="tel:+919375777772">+91 9375777772</a></div>
-                <div class="phone-item">🇬🇧 UK: <a href="tel:+447424292710">+44 7424292710</a></div>
-                <div class="phone-item">🇵🇹 Portugal: <a href="tel:+351920131967">+351 920131967</a></div>
-                <div class="phone-item" style="margin-top: 15px;">✉️ Email: <a href="mailto:diyaeducation@gmail.com">diyaeducation@gmail.com</a></div>
-            </div>
-        </div>
-
-        <div class="contact-form">
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" placeholder="તમારું પૂરું નામ" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="મોબાઇલ નંબર" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="ઈમેઈલ એડ્રેસ" required>
-                </div>
-                <div class="form-group">
-                    <select required style="color: #aaa;">
-                        <option value="" disabled selected>વીઝાનો પ્રકાર પસંદ કરો</option>
-                        <option value="student">Student Visa</option>
-                        <option value="pr">PR / Permanent Residency</option>
-                        <option value="work">Work Visa</option>
-                        <option value="visitor">Visitor Visa</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea rows="3" placeholder="તમારો સંદેશ..."></textarea>
-                </div>
-                <button type="submit" class="btn-gold" style="width: 100%; border: none; cursor: pointer;">એન્ક્વાયરી સબમિટ કરો</button>
-            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Diya Education. All Rights Reserved.</p>
+    <section id="contact" class="py-16 px-4 max-w-7xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-blue-900">સંપર્ક કરો</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-blue-900 text-white p-8 rounded-2xl">
+                <h4 class="text-2xl font-bold mb-6">DEC IMMIGRATION ADVISOR</h4>
+                <p class="mb-4"><i class="fas fa-map-marker-alt text-amber-400 mr-3"></i> 125, Nexus 1, Uttarsanda Road, Nadiad, Gujarat - 387001</p>
+                <p class="mb-4"><i class="fas fa-envelope text-amber-400 mr-3"></i> diyaeducation@gmail.com</p>
+                <div class="space-y-2 mt-6">
+                    <p class="font-bold text-amber-400">ફોન નંબરો:</p>
+                    <p><i class="fas fa-phone mr-2"></i> +91 93757 77772 (India)</p>
+                    <p><i class="fas fa-phone mr-2"></i> +44 74242 92710 (UK)</p>
+                    <p><i class="fas fa-phone mr-2"></i> +351 92013 1967 (Portugal)</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
+                <h4 class="text-xl font-bold mb-4">ઇન્ક્વાયરી ફોર્મ</h4>
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('તમારી વિગતો મોકલાઈ ગઈ છે!');">
+                    <input type="text" placeholder="તમારું નામ" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    <input type="tel" placeholder="મોબાઇલ નંબર" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        <option>કેળવણી / સ્ટડી વિઝા</option>
+                        <option>ટૂરિસ્ટ / વિઝિટર વિઝા</option>
+                        <option>વર્ક પરમિટ / PR</option>
+                    </select>
+                    <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-3 rounded-lg transition">મેસેજ મોકલો</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-800">
+        <p>© 2026 DEC IMMIGRATION ADVISOR. All Rights Reserved.</p>
     </footer>
 
 </body>
