@@ -3,92 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEC Immigration Advisor | Student Visa & Immigration Consultancy</title>
+    <title>Diya Education & Visa Consultancy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .page-content { display: none; }
+        .page-content.active { display: block; }
+    </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800 font-sans flex flex-col min-h-screen">
 
-    <header class="bg-blue-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold tracking-wide">DEC <span class="text-amber-400">IMMIGRATION</span></h1>
-            <a href="https://wa.me/919375777772" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition">
-                <i class="fab font-bold fa-whatsapp mr-1"></i> WhatsApp
-            </a>
+    <div class="bg-slate-900 text-slate-300 text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm">
+                <a href="tel:+919375777772" class="flex items-center gap-1.5 hover:text-amber-400 transition">
+                    <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                    <span>🇮🇳 +91 9375777772</span>
+                </a>
+                <a href="tel:+447424292710" class="flex items-center gap-1.5 hover:text-amber-400 transition">
+                    <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                    <span>🇬🇧 +44 7424292710</span>
+                </a>
+                <a href="tel:+351920131967" class="flex items-center gap-1.5 hover:text-amber-400 transition">
+                    <i data-lucide="phone" class="w-4 h-4 text-amber-400"></i>
+                    <span>🇵🇹 +351 920131967</span>
+                </a>
+                <a href="mailto:diyaeducation@gmail.com" class="flex items-center gap-1.5 hover:text-amber-400 transition">
+                    <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+                    <span>diyaeducation@gmail.com</span>
+                </a>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 text-xs bg-amber-500/10 text-amber-400 px-3 py-1 rounded-full border border-amber-500/20">
+                <i data-lucide="globe" class="w-3.5 h-3.5"></i>
+                <span>All World Passport & Visa Services</span>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+                <div class="bg-amber-500 text-slate-900 p-2.5 rounded-xl font-black text-xl shadow-lg">DEC</div>
+                <div>
+                    <h1 class="font-bold text-xl text-slate-900 tracking-tight">DIYA EDUCATION</h1>
+                    <p class="text-xs text-amber-600 font-medium">IMMIGRATION & PASSPORT CONSULTANCY</p>
+                </div>
+            </div>
+
+            <nav class="hidden lg:flex items-center gap-1 font-semibold text-slate-700">
+                <button onclick="showPage('home')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition">Home</button>
+                <button onclick="showPage('uk')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition">UK Visa</button>
+                <button onclick="showPage('usa')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition">USA Visa</button>
+                <button onclick="showPage('canada')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition">Canada Visa</button>
+                <button onclick="showPage('europe')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition">Europe Visa</button>
+                <button onclick="showPage('passport')" class="nav-btn px-4 py-2 rounded-lg hover:text-amber-600 hover:bg-slate-100 transition text-amber-600 font-bold">Passport Application</button>
+                <button onclick="showPage('contact')" class="ml-2 bg-slate-900 text-amber-400 hover:bg-slate-800 px-5 py-2.5 rounded-xl font-bold transition shadow-md">Contact Us</button>
+            </nav>
         </div>
     </header>
 
-    <section class="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">તમારા વિદેશ જવાના સપનાને સાકાર કરો</h2>
-            <p class="text-lg md:text-xl text-blue-100 mb-8">સ્ટડી વિઝા, વર્ક પરમિટ અને પીઆર માર્ગદર્શન માટે સૌથી વિશ્વાસપાત્ર સલાહકાર.</p>
-            <a href="#contact" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-bold px-6 py-3 rounded-xl shadow-lg transition">સંપર્ક કરો</a>
-        </div>
-    </section>
+    <main class="flex-grow">
 
-    <section class="py-16 px-4 max-w-7xl mx-auto">
-        <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-blue-900">અમારી સેવાઓ</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <i class="fas fa-user-graduate text-4xl text-blue-600 mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">Student Visa</h4>
-                <p class="text-gray-600 text-sm">UK, Canada, USA, Europe અને Australia માટે યુનિવર્સિટી એડમિશન અને વિઝા પ્રોસેસિંગ.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <i class="fas fa-passport text-4xl text-blue-600 mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">PR & Immigration</h4>
-                <p class="text-gray-600 text-sm">વિદેશમાં સ્થાયી થવા માટે પર્મેનન્ટ રેસિડન્સી (PR) અને લીગલ પેપરવર્ક ગાઇડન્સ.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <i class="fas fa-briefcase text-4xl text-blue-600 mb-4"></i>
-                <h4 class="text-xl font-bold mb-2">Visitor & Work Permit</h4>
-                <p class="text-gray-600 text-sm">ટૂરિસ્ટ વિઝા, બિઝનેસ વિઝા અને વર્ક પરમિટ માટેની ઝડપી ફાઇલિંગ સેવા.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-gray-100 py-16 px-4">
-        <div class="max-w-5xl mx-auto text-center">
-            <h3 class="text-2xl md:text-3xl font-bold text-blue-900 mb-4">શા માટે DEC IMMIGRATION?</h3>
-            <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                કરણ ગિરિશભાઈ મિસ્ત્રી (Founder & CEO) ના નેતૃત્વ હેઠળ <strong>DEC IMMIGRATION ADVISOR</strong> (Diya Education and Consultant) વિદ્યાર્થીઓ અને પ્રોફેસનલ્સને વિદેશ જવા માટે સાચું અને પારદર્શક માર્ગદર્શન પૂરું પાડે છે.
-            </p>
-        </div>
-    </section>
-
-    <section id="contact" class="py-16 px-4 max-w-7xl mx-auto">
-        <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-blue-900">સંપર્ક કરો</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-blue-900 text-white p-8 rounded-2xl">
-                <h4 class="text-2xl font-bold mb-6">DEC IMMIGRATION ADVISOR</h4>
-                <p class="mb-4"><i class="fas fa-map-marker-alt text-amber-400 mr-3"></i> 125, Nexus 1, Uttarsanda Road, Nadiad, Gujarat - 387001</p>
-                <p class="mb-4"><i class="fas fa-envelope text-amber-400 mr-3"></i> diyaeducation@gmail.com</p>
-                <div class="space-y-2 mt-6">
-                    <p class="font-bold text-amber-400">ફોન નંબરો:</p>
-                    <p><i class="fas fa-phone mr-2"></i> +91 93757 77772 (India)</p>
-                    <p><i class="fas fa-phone mr-2"></i> +44 74242 92710 (UK)</p>
-                    <p><i class="fas fa-phone mr-2"></i> +351 92013 1967 (Portugal)</p>
+        <section id="page-home" class="page-content active">
+            <div class="relative bg-slate-900 text-white py-24 px-4 overflow-hidden">
+                <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="max-w-5xl mx-auto text-center relative z-10">
+                    <span class="bg-amber-500/20 text-amber-400 border border-amber-500/30 text-sm font-semibold px-4 py-1.5 rounded-full inline-block mb-4">100% Transparent & Trusted Services</span>
+                    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Diya Education & <span class="text-amber-400">Immigration Services</span></h1>
+                    <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8">Expert guidance for UK, USA, Canada & Europe Visitor Visas, Work Permits, Business Visas, and All-World Passport Applications.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="showPage('contact')" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-8 py-4 rounded-xl text-lg transition shadow-lg hover:scale-105">Book Consultation</button>
+                        <button onclick="showPage('passport')" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold px-8 py-4 rounded-xl text-lg transition">Passport Services</button>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-                <h4 class="text-xl font-bold mb-4">ઇન્ક્વાયરી ફોર્મ</h4>
-                <form class="space-y-4" onsubmit="event.preventDefault(); alert('તમારી વિગતો મોકલાઈ ગઈ છે!');">
-                    <input type="text" placeholder="તમારું નામ" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
-                    <input type="tel" placeholder="મોબાઇલ નંબર" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
-                    <select class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
-                        <option>કેળવણી / સ્ટડી વિઝા</option>
-                        <option>ટૂરિસ્ટ / વિઝિટર વિઝા</option>
-                        <option>વર્ક પરમિટ / PR</option>
-                    </select>
-                    <button type="submit" class="w-full bg-blue-900 hover:bg-blue-800 text-white font-bold p-3 rounded-lg transition">મેસેજ મોકલો</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <footer class="bg-gray-900 text-gray-400 text-center py-6 border-t border-gray-800">
-        <p>© 2026 DEC IMMIGRATION ADVISOR. All Rights Reserved.</p>
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <h2 class="text-3xl font-extrabold text-center mb-12">Our Core Services</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="plane" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Visitor & Tourist Visa</h3>
+                        <p class="text-slate-600 leading-relaxed">Complete documentation, bank statement guidance, and fast filing for family visit and tourism visas.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="briefcase" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Work Permit & Employment</h3>
+                        <p class="text-slate-600 leading-relaxed">End-to-end guidance for employer sponsorship, job permits, and legal work migration routes.</p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-xl transition">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mb-6">
+                            <i data-lucide="building-2" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Business & Investor Visa</h3>
+                        <p class="text-slate-600 leading-relaxed">Setup businesses abroad, investor residency programs, and global commercial mobility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-uk" class="page-content">
+            <div class="bg-blue-900 text-white py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">United Kingdom (UK) Visas</h1>
+                <p class="text-slate-300 text-lg">Visitor, Skilled Worker, and Business Investor Pathways</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">UK Visitor Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Multiple entry tourist & family visit visas (6 months to 10 years).</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">UK Skilled Worker Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">COS processing and English test guidance for legal work in the UK.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">UK Business Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Entrepreneur and business investor setup with endorsement support.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-usa" class="page-content">
+            <div class="bg-slate-900 text-white py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">United States (USA) Visas</h1>
+                <p class="text-slate-300 text-lg">B1/B2 Visitor, Work Permits & Business Mobility</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">US B1/B2 Visitor Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">DS-160 filling and mock interview practice for 10-year tourist visas.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">USA Work Visas</h3>
+                    <p class="text-sm text-slate-600 mb-4">H-1B, L-1 intra-company transfers, and dependent visas.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">USA Business Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Investor programs and business expansion solutions.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-canada" class="page-content">
+            <div class="bg-red-900 text-white py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">Canada Visas & Immigration</h1>
+                <p class="text-slate-300 text-lg">Tourist Visas, LMIA Work Permits & Business Routes</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Canada Visitor Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">SOP writing and financial setup for 10-year multiple visitor visas.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Canada Work Permit</h3>
+                    <p class="text-sm text-slate-600 mb-4">LMIA job offer processing and open/closed work permit assistance.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Canada Business Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Start-up Visa (SUV) & Provincial investor pathways.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-europe" class="page-content">
+            <div class="bg-indigo-950 text-white py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">Schengen & Europe Visas</h1>
+                <p class="text-slate-300 text-lg">Visitor, Work Permit & Business Visas for 29 European Countries</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Schengen Tourist Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Covering France, Germany, Portugal, Italy, Spain & all Schengen states.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Europe Work Permit</h3>
+                    <p class="text-sm text-slate-600 mb-4">EU Blue Card and work permits for Germany, Portugal, Poland, etc.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Europe Golden Visa</h3>
+                    <p class="text-sm text-slate-600 mb-4">Business residency and investor visa applications.</p>
+                    <button onclick="showPage('contact')" class="w-full bg-slate-900 text-amber-400 py-2.5 rounded-lg font-bold">Inquire Now</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-passport" class="page-content">
+            <div class="bg-amber-600 text-slate-950 py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">All World Passport Application Services</h1>
+                <p class="text-slate-900 text-lg font-semibold">Fresh, Renewal, Tatkal & Name/Address Correction Processing</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12">
+                <div class="bg-slate-900 text-white p-8 rounded-2xl max-w-3xl mx-auto shadow-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-center text-amber-400">Passport Assistance Request</h3>
+                    <form onsubmit="event.preventDefault(); alert('Passport Request Submitted!');" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Your Name" class="bg-slate-800 border border-slate-700 text-white p-3 rounded-lg w-full outline-none focus:border-amber-400" required>
+                            <input type="tel" placeholder="Mobile Number" class="bg-slate-800 border border-slate-700 text-white p-3 rounded-lg w-full outline-none focus:border-amber-400" required>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="email" placeholder="Email Address" class="bg-slate-800 border border-slate-700 text-white p-3 rounded-lg w-full outline-none focus:border-amber-400" required>
+                            <select class="bg-slate-800 border border-slate-700 text-slate-300 p-3 rounded-lg w-full outline-none focus:border-amber-400">
+                                <option>Fresh Passport</option>
+                                <option>Renewal Passport</option>
+                                <option>Tatkal Service</option>
+                                <option>Name/Address Correction</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 rounded-lg text-lg transition">Submit Passport Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-contact" class="page-content">
+            <div class="bg-slate-900 text-white py-16 px-4 text-center">
+                <h1 class="text-4xl font-black mb-4">Contact Diya Education</h1>
+                <p class="text-slate-300 text-lg">Direct Counseling for UK, USA, Canada, Europe Visas & Passports</p>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-slate-900">Contact Details</h2>
+                    <p class="text-slate-600">Reach out to us directly on any of our global contact numbers or email ID:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <div class="p-3 bg-amber-100 text-amber-600 rounded-lg">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">INDIA OFFICE</p>
+                                <a href="tel:+919375777772" class="text-lg font-bold text-slate-900 hover:text-amber-600">+91 9375777772</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <div class="p-3 bg-amber-100 text-amber-600 rounded-lg">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">UK CONTACT</p>
+                                <a href="tel:+447424292710" class="text-lg font-bold text-slate-900 hover:text-amber-600">+44 7424292710</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <div class="p-3 bg-amber-100 text-amber-600 rounded-lg">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">EUROPE CONTACT</p>
+                                <a href="tel:+351920131967" class="text-lg font-bold text-slate-900 hover:text-amber-600">+351 920131967</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                            <div class="p-3 bg-amber-100 text-amber-600 rounded-lg">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold">EMAIL ADDRESS</p>
+                                <a href="mailto:diyaeducation@gmail.com" class="text-lg font-bold text-slate-900 hover:text-amber-600">diyaeducation@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+                    <h3 class="text-xl font-bold mb-6 text-slate-900">Inquiry Form</h3>
+                    <form onsubmit="event.preventDefault(); alert('Inquiry Sent! We will contact you soon.');" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">FULL NAME</label>
+                            <input type="text" class="w-full p-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500" required>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">PHONE NUMBER</label>
+                                <input type="tel" class="w-full p-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">EMAIL ID</label>
+                                <input type="email" class="w-full p-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500" required>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">DESTINATION</label>
+                                <select class="w-full p-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500">
+                                    <option>UK</option>
+                                    <option>USA</option>
+                                    <option>Canada</option>
+                                    <option>Europe</option>
+                                    <option>Passport Service</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">VISA TYPE</label>
+                                <select class="w-full p-3 border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-amber-500">
+                                    <option>Visitor Visa</option>
+                                    <option>Work Visa</option>
+                                    <option>Business Visa</option>
+                                    <option>Passport Application</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-400 font-bold py-3.5 rounded-lg text-lg transition">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-8 px-4 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-center md:text-left">
+            <p>© 2026 Diya Education & Visa Consultancy. All rights reserved.</p>
+            <p class="text-amber-400 font-semibold">India: +91 9375777772 | UK: +44 7424292710 | EU: +351 920131967</p>
+        </div>
     </footer>
 
+    <script>
+        lucide.createIcons();
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const targetPage = document.getElementById('page-' + pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
